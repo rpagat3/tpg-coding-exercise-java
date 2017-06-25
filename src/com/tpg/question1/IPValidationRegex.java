@@ -34,26 +34,19 @@ public class IPValidationRegex {
 	/**
 	 * Reads the IPs within an input stream and displays valid IPs in the console.
 	 * @param inputStream The input stream that contains the IPs to be validated.
+	 * @throws IOException 
 	 */
-	public void processFile(InputStream inputStream) {
+	public void processFile(String fileName) throws IOException {
+		Path path = Paths.get(fileName);
 		System.out.println("Below are the valid IPs.");
 		String ip = null;
-		try (Scanner scanner = new Scanner(inputStream, ENCODING.name())) {
+		try (Scanner scanner = new Scanner(path, ENCODING.name())) {
 			while (scanner.hasNextLine()) {
 				ip = scanner.nextLine();
 				if(isValid(ip))
 					System.out.println(ip);
 			}
 		}
-	}
-	
-	/**
-	 * Reads the IPs within a file and displays valid IPs in the console. The file must be under IPValidationRegex package - com.tpg.question1.
-	 * @param fileName The file that contains the IPs to be validated.
-	 */
-	public void processFile(String fileName) {
-		InputStream inputStream = this.getClass().getResourceAsStream(fileName);
-		processFile(inputStream);
 	}
 	
 	/**
@@ -68,7 +61,14 @@ public class IPValidationRegex {
 	}
 
 	public static void main(String[] args) {
-		IPValidationRegex ipvr = new IPValidationRegex();
-		ipvr.processFile("test_ip.txt");
+		IPValidationRegex ipvr = new IPValidationRegex();		
+		try (Scanner reader = new Scanner(System.in)) {
+			System.out.println("Enter the full path and filename of the file containing the list of IPs: ");
+			String path = reader.next();
+			ipvr.processFile(path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}	
 }
