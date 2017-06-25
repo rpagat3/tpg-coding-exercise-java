@@ -17,10 +17,10 @@ Note: Ensure that the Apache Ant is installed properly. Please refer to [Install
 
 ### Steps:
 
-1. Extract the tpg-coding-exercise-java-<version>.zip.
+1. Extract the `tpg-coding-exercise-java-<version>.zip`.
 2. Go to `.\tpg-coding-exercise-java-<version>\`.
 3. Download the following JARs and put them into `.\tpg-coding-exercise-java-<version>\ext_lib` folder.
-  - junit.jar (Download from [JUnit4](http://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12.jar))
+	- junit.jar (Download from [JUnit4](http://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12.jar))
 	- hamcrest-core.jar (Download from [Hamcrest](http://search.maven.org/remotecontent?filepath=org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar))
 4. Verify the name of the jars in the `.\tpg-coding-exercise-java-<version>\build.properties` are correct. If you would be using a slightly different version of jars, please update the properties accordingly.
 	- junit.jar=${basedir}/ext_lib/**junit-4.12.jar**
