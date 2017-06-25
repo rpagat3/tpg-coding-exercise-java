@@ -35,12 +35,13 @@ There are two ways test the application.
 1. Run JUnit Test
    1. Please ensure that you have already completed the **Installation** steps.
 	- Go to `.\tpg-coding-exercise-java-<version>\`.
-	- Execute a JUnit Test using ant: `ant clean build <TargetTestName> junitreport` (e.g. `ant clean, build-project, IPValidationRegexTest, StudentComparatorTest, junitreport`)
+	- Execute a JUnit Test using ant: `ant clean build <TargetTestName> junitreport` (e.g. `ant clean build-project IPValidationRegexTest StudentComparatorTest junitreport`)
 	- Go to `.\tpg-coding-exercise-java-<version>\junit` and open index.html to view the JUnit report.
 2. Run corresponding class for each question that conatins the main() method
 	- Please ensure that you have already completed the **Installation** steps.
 	- Go to `.\tpg-coding-exercise-java-<version>\bin`.
-	- Execute: `java com.tpg.question<number>.<class>`  (e.g. `java com.tpg.question1.IPValidationRegex`, `com.tpg.question2.Main`, `com.tpg.question2.ElapsedTime`
+	- Execute: `java com.tpg.question<number>.<class>`  (e.g. `java com.tpg.question1.IPValidationRegex`, `java com.tpg.question2.Main`, `java com.tpg.question3.ElapsedTime`)
+	- **Note:** For IPValidationRegex, the test input file is in `./tpg-coding-exercises/test/com/tpg/question1`
 
 ## Contributors
 
